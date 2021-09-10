@@ -1,0 +1,65 @@
+<div class="mt-5" style=" margin-left: 35%; margin-right:35%;">
+    <div class="card-header fs-3 text-center">
+    </div>
+    <div class="card-body">
+        <form>
+
+            <div class="col-md-4 offset-md-4">
+
+                <div class="form-group">
+                    <label for="recaccno" class="form-label"><b>Receiver Account No</b></label><br>
+                    <input type="text" size=50% name="recaccno" placeholder=" Enter Receiver's acc number" class="form-control"
+                        id="recaccno" aria-describedby="recHelp">
+                    <div id="recHelp" class="form-text"></div>
+                </div><br>
+                <div class="form-group">
+                    <label for="recaccname" class="form-label"><b>Receiver Account Name</b></label><br>
+                    <input type="text" size=50% name="recaccname" placeholder=" Enter Receiver's acc name" class="form-control"
+                        id="recaccname" aria-describedby="recHelp">
+                    <div id="recHelp" class="form-text"></div><br>
+
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="recbic" class="form-label"><b>Receiver BIC</b></label><br>
+                            <input name="recbic" size=50% placeholder="Enter Receiver's BIC" type="text" class="form-control"
+                                id="recbic">
+                        </div><br>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="amount" class="form-label"><b>Amount</b></label><br>
+                            <input name="amount" placeholder="Enter amount" type="text" size=50% class="form-control"
+                                id="amount">
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="msgcode" class="form-label"><b>Message Code</b></label><br>
+                            <select id="msgcode" name="msgcode" class="form-select" aria-label="Default select example" aria-setsize="50%">
+                                <option value="" >Select Message Code</option>
+                                <option *ngFor="let m of messagecode" [value]="m">{{m}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label for="transfertype" class="form-label mt-4">TransferType</label><br>
+                    <select id="transfertype" name="transfertype" class="form-select">
+                        <option value="">select transfer type</option>
+                        <option *ngFor="let c of transfertype" [value]="c.code">{{c.name}}</option>
+                    </select>
+                </div><br>
+                <div class="form-group mt-3">
+                    <button type="button" (click)="handleRegister()" class="btn btn-primary">Register</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

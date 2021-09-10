@@ -1,0 +1,45 @@
+
+<!-- <div class="mt-5" style=" margin-left: 35%; margin-right:35%;"> -->
+    <div class="card-header fs-3 text-center">
+    </div>
+    <div class="card-body">
+        <h1 text-align="center">LOGIN PAGE</h1>
+        <form [formGroup]="loginForm" (ngSubmit)="handleLogin()" >
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <label for="username" class="form-label mt-4">Username:</label><br><br>
+                    <input type="text" size=50% name="username" class="form-control" id="username" formControlName="username"
+                        placeholder="enter username" autocomplete="off"><br><br>
+                    <div *ngIf="!username?.valid && username?.dirty " class="text-danger mt-2">
+
+                        <div *ngIf="username.errors?.required">Username is required</div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <label for="password" class="form-label">Password</label><br><br>
+                    <input type="password" size=50% class="form-control" name="password" id="password" formControlName="password"
+                        placeholder="enter password " autocomplete="off"><br>
+                    <div *ngIf="!password?.valid && password?.dirty " class="text-danger mt-2">
+                        <div *ngIf="password.errors?.maxlength">Password cannot be more than 10 characters</div>
+                        <div *ngIf="password.errors?.minlength">Password should be miniumum of 6 characters</div>
+                        <div *ngIf="password.errors?.required">Password is required</div>
+                        <div *ngIf="password.errors?.pattern">Password should be alphanumberic with atleast one special
+                            character</div>
+                    </div>
+
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="aligncenter">
+                  <a href="C:\Users\Administrator\Desktop\Angular\payment\src\app\dashboard"> 
+                       <button type="submit" [disabled]="!loginForm.valid" class="btn btn-success form-control"
+                        fgid="7993" >Submit</button></a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
