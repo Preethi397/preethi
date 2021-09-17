@@ -1,0 +1,63 @@
+<br>
+<div class="div row" class="md">
+  <div class="div col-md-12"  style="text-align: center;">
+<h1>Welcome back  {{user}}</h1>
+  </div>
+</div>
+<br>
+<h2 style="margin-left: 100px;">Analytics</h2>
+<div class="container-fluid">
+  <div class="row mt-3 offset-md-1">
+<div class="card col-md-4 mt-3 ms-2 " style="border-radius: 8px; 
+background: linear-gradient(150deg, #ee0979, #ff6a00 100%);">
+    <div class="card-body">
+        <div class="row">
+            <div class="col col-md-6" style="color: white;">
+                <h2 class="card-title">Clients</h2>
+                <small class="fw-light">your total clients</small>
+            </div>
+            <div class="col col-md-6">
+                <h2 class="text-end mt-3" style="color: white;">{{totalclients}}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card col-md-4 mt-3" style="border-radius: 8px; margin-left:80px;  background:linear-gradient(150deg, #05cc47, #4dc47d, #181a1b 135%);">
+    <div class="card-body">
+        <div class="row">
+            <div class="col col-md-6" style="color: white;">
+                <h2 class="card-title">Trade</h2>
+                <small class="fw-light">last month total trades</small>
+            </div>
+            <div class="col col-md-6">
+                <h2 class="text-end mt-3" style="color: white;">{{trades}}</h2>
+            </div>
+        </div>
+    </div>
+  </div>
+  </div>
+
+ 
+
+  
+
+ 
+
+  <br><br><br>
+    <h2 style="margin-left: 90px;">Last Transaction</h2>
+    <div class="row mt-3 offset-md-1"></div>
+  <div class="card col-md-8 mt-3" style="border-radius: 8px; margin-left:110px;  background:linear-gradient(150deg, #0519cc, #4dc47d, #181a1b 135%);">
+    <div class="card-body">
+        <div class="row">
+            <div class="col col-md-6" style="color: white;">
+                <h2 class="card-title">ClientName: {{Clientname}}</h2>
+                <h3 class="fw-dark">Activity:{{activity}}</h3>
+                <h3 class="fw-dark">InstrumentName: {{instrumentname}}</h3>
+            </div>
+            <div class="col col-md-6">
+                <h2 class="text-end mt-3 fw-dark" style="color: white;">{{transactionlimit}}</h2>
+                <h2 class="text-end mt-3" style="color: white;">{{quantity}}</h2>
+                
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,92 @@
+<div class="row">
+    <div class="col-md-12">
+        <form [formGroup]="order">
+            <fieldset>
+                <div class="offset-md-3">
+                    <legend>
+                        <h1><b>ORDER_PLACING</b></h1>
+                    </legend>
+                </div>
+                <div class="col-md-4 offset-md-3">
+                    <div class="form-group">
+                        <label for="clientid" class="form-label mt-4">Client Id:</label><br>
+                        <select class="form-select" id="clientid">
+                            <option value="">Choose ClientId</option>
+                            <option *ngFor="let c of clientid" [value]="c">{{c}}
+                            </option>
+                        </select>
+                    </div><br>
+
+                    <div class="form-group">
+                        <label for="client_name" class="form-label mt-4">Client Name:</label><br>
+                        <input type="text" class="form-control" id="client_name" aria-describedby="clientNameHelp"
+                            placeholder="Enter client Name" readonly>
+                    </div><br>
+                    <div class="form-group">
+                        <label for="instrumentid" class="form-label mt-4">Instrument Id:</label><br>
+                        <select class="form-select" id="instrumentid" >
+                            <option value="" readonly>Choose InstrumentId</option>
+                            <option *ngFor="let i of instrumentid" [value]="i">{{i}}
+                            </option>
+                        </select>
+                    </div><br>
+
+                    <div class="form-group">
+                        <label for="instrumentname" class="form-label mt-4">Instrument Name:</label><br>
+                        <input type="text" class="form-control" id="instrumentname" placeholder="Enter Instrument Name" readonly>
+                    </div><br>
+                    <div class="form-group">
+                        <label for="face" class="form-label mt-4">Face Value:</label><br>
+                        <input type="text" class="form-control" id="face" placeholder="Enter face value" readonly>
+                    </div><br>
+                    <div class="form-group">
+                        <label for="expirydate" class="form-label mt-4">Expiry Date:</label><br>
+                        <input type="date" class="form-control" id="expirydate" placeholder="Enter Expiry Date">
+                    </div><br>
+
+                    <div class="form-group">
+                        <label for="price" class="form-label mt-4">Price:</label><br>
+                        <input type="number" class="form-control" formControlName="price" id="price"
+                            placeholder="Enter Price">
+                    </div><br>
+                    <div *ngIf="!order.controls['price']?.valid && order.controls['price']?.dirty"
+                        class="text-danger mt-2">
+                        <div *ngIf="order.controls['price'].errors?.required">
+                            Price is required
+                        </div>
+                        <div *ngIf="order.controls['price'].errors?.pattern">
+                            Only Numbers are allowed
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity" class="form-label mt-4">Quantity:</label><br>
+                        <input type="number" class="form-control" min='0' formControlName="quantity" autocomplete="off"
+                            id="quantity" placeholder="Enter Quantity" step="25">
+                    </div><br>
+                    <div *ngIf="!order.controls['quantity']?.valid && order.controls['quantity']?.dirty"
+                        class="text-danger mt-2">
+                        <div *ngIf="order.controls['quantity'].errors?.required">
+                            Quantity is required
+                        </div>
+                        <div *ngIf="order.controls['quantity'].errors?.pattern">
+                            Only Numbers are allowed
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="direction" class="form-label mt-4">Direction:</label><br>
+                        <select class="form-select" id="direction">
+                            <option value="">Select Direction</option>
+                            <option *ngFor="let d of direction" [value]="d">{{d}}
+                            </option>
+                        </select>
+                    </div><br>
+                    <div class="form-group mt-3">
+                        <button type="button" (click)="handleSubmit()" class="btn btn-primary">Submit</button>
+                    </div>
+
+                </div>
+            </fieldset>
+        </form>
+
+    </div>
+</div>
