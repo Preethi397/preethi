@@ -10,7 +10,7 @@
                 <div class="col-md-4 offset-md-3">
                     <div class="form-group">
                         <label for="clientid" class="form-label mt-4">Client Id:</label><br>
-                        <select class="form-select" id="clientid">
+                        <select class="form-select" id="clientid" disabled="true">
                             <option value="">Choose ClientId</option>
                             <option *ngFor="let c of clientid" [value]="c">{{c}}
                             </option>
@@ -41,7 +41,7 @@
                     </div><br>
                     <div class="form-group">
                         <label for="expirydate" class="form-label mt-4">Expiry Date:</label><br>
-                        <input type="date" class="form-control" id="expirydate" placeholder="Enter Expiry Date">
+                        <input type="date" class="form-control" id="expirydate" placeholder="Enter Expiry Date" readonly>
                     </div><br>
 
                     <div class="form-group">
