@@ -8,15 +8,19 @@
                     </legend>
                 </div>
                 <div class="col-md-4 offset-md-3">
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="clientid" class="form-label mt-4">Client Id:</label><br>
                         <select class="form-select" id="clientid" disabled="true">
                             <option value="">Choose ClientId</option>
                             <option *ngFor="let c of clientid" [value]="c">{{c}}
                             </option>
                         </select>
+                    </div><br> -->
+                    <div class="form-group">
+                        <label for="clientid" class="form-label mt-4">Client Id:</label><br>
+                        <input type="text" class="form-control" id="clientid" aria-describedby="clientIdHelp"
+                            placeholder="Enter client Id" readonly>
                     </div><br>
-
                     <div class="form-group">
                         <label for="client_name" class="form-label mt-4">Client Name:</label><br>
                         <input type="text" class="form-control" id="client_name" aria-describedby="clientNameHelp"

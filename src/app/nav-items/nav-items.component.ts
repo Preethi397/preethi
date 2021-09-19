@@ -10,7 +10,7 @@ navitems:Array<any>;
   constructor() { 
     this.navitems = [{
       text: "Order_Placing",
-      link: "order_placing"
+      link: "order-placing"
     },
     {
       text: "Details",
@@ -19,6 +19,10 @@ navitems:Array<any>;
     {
       text: "Dashboard",
       link: "dashboard"
+    },
+    {
+      text: "Portfolio",
+      link: "portfolio"
     },
    
   ]
