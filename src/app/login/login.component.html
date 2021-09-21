@@ -1,45 +1,128 @@
+<!-- <div class="container">
 
-<!-- <div class="mt-5" style=" margin-left: 35%; margin-right:35%;"> -->
-    <div class="card-header fs-3 text-center">
-    </div>
-    <div class="card-body">
-        <h1 text-align="center">LOGIN PAGE</h1>
-        <form [formGroup]="loginForm" (ngSubmit)="handleLogin()" >
-            <div class="row mb-3">
-                <div class="col-md-12">
-                    <label for="username" class="form-label mt-4">Username:</label><br><br>
-                    <input type="text" size=50% name="username" class="form-control" id="username" formControlName="username"
-                        placeholder="enter username" autocomplete="off"><br><br>
-                    <div *ngIf="!username?.valid && username?.dirty " class="text-danger mt-2">
+    <div class="mt-5" style=" margin-left: 35%; margin-right:35%;">
+        <div class="card-header fs-3 text-center">
+        </div>
+        <div class="card-body">
 
-                        <div *ngIf="username.errors?.required">Username is required</div>
+
+            <h1 text-align="center">LOGIN PAGE</h1>
+            <form [formGroup]="loginForm" (ngSubmit)="handleLogin()">
+                <div *ngIf="apiResult.error" class="alert alert-danger mt-3" role="alert">
+                    <div class="text-center">Login Failed !! Please Check Your Details.</div>
+                </div>
+                <div *ngIf="apiResult.success" class="alert alert-success mt-3" role="alert">
+                    <div class="text-center"> Login Successfull !! </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        <label for="username" class="form-label mt-4">Username:</label><br><br>
+                        <input type="text" size=50% name="username" class="form-control" id="username"
+                            formControlName="username" placeholder="enter username" autocomplete="off"><br><br>
+                        <div *ngIf="!username?.valid && username?.dirty " class="text-danger mt-2">
+
+                            <div *ngIf="username.errors?.required">Username is required</div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        <label for="password" class="form-label">Password</label><br><br>
+                        <input type="password" size=50% class="form-control" name="password" id="password"
+                            formControlName="password" placeholder="enter password " autocomplete="off"><br>
+                        <div *ngIf="!password?.valid && password?.dirty " class="text-danger mt-2">
+                            <div *ngIf="password.errors?.maxlength">Password cannot be more than 10 characters</div>
+                            <div *ngIf="password.errors?.minlength">Password should be miniumum of 6 characters</div>
+                            <div *ngIf="password.errors?.required">Password is required</div>
+                            <div *ngIf="password.errors?.pattern">Password should be alphanumberic with atleast one
+                                special
+                                character</div>
+                        </div>
 
                     </div>
                 </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col-md-12">
-                    <label for="password" class="form-label">Password</label><br><br>
-                    <input type="password" size=50% class="form-control" name="password" id="password" formControlName="password"
-                        placeholder="enter password " autocomplete="off"><br>
-                    <div *ngIf="!password?.valid && password?.dirty " class="text-danger mt-2">
-                        <div *ngIf="password.errors?.maxlength">Password cannot be more than 10 characters</div>
-                        <div *ngIf="password.errors?.minlength">Password should be miniumum of 6 characters</div>
-                        <div *ngIf="password.errors?.required">Password is required</div>
-                        <div *ngIf="password.errors?.pattern">Password should be alphanumberic with atleast one special
-                            character</div>
+                <br>
+                <div class="row">
+                    <div class="aligncenter">
+                        <a href="http://localhost:4200/transaction">
+                            <button type="button" [disabled]="!loginForm.valid" class="btn btn-success form-control"
+                                fgid="7993">Submit</button></a>
                     </div>
-
                 </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="aligncenter">
-                  <a href="C:\Users\Administrator\Desktop\Angular\payment\src\app\dashboard"> 
-                       <button type="submit" [disabled]="!loginForm.valid" class="btn btn-success form-control"
-                        fgid="7993" >Submit</button></a>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
-</div>
+</div> -->
+
+
+<div class="container">
+    <div class="row" style=" margin-left: 35%; margin-right:35%">
+    <div class="col-lg-3 col-md-2"></div>
+    <div class="col-lg-6 col-md-8 login-box">
+    <div *ngIf="apiResult.error" class="alert alert-danger mt-3" role="alert">
+    <div class="text-center">Login Failed !! Please Check Your Details.</div>
+    </div>
+    <div *ngIf="apiResult.success" class="alert alert-success mt-3" role="alert">
+    <div class="text-center"> Login Successfull !! </div>
+    </div>
+    
+     
+    
+    <div class="col-lg-12 login-title">
+    <b>HDFC BANKING</b>
+    </div><br>
+    <div class="col-lg-12 login-form">
+    <div class="col-lg-12 login-form">
+    
+     
+    
+    <form [formGroup]="loginForm" novalidate>
+    
+     
+    
+    <div class="form-group">
+    <label for="username" class="form-label mt-4">Username</label>
+    <input type="text" class="form-control" id="username" name="username"
+    placeholder="Enter Username" formControlName="username" autocomplete="off"
+    [(ngModel)]="userProfile.username" />
+    <div *ngIf="!username?.valid && username?.dirty " class="text-danger mt-2">
+    
+     
+    
+    <div *ngIf="username.errors?.required">Username is required</div>
+    
+     
+    
+    </div>
+    </div>
+    <br>
+    <div class="form-group">
+    <label for="username" class="form-label mt-4">Password</label>
+    <input type="password" class="form-control" id="password" name="password"
+    placeholder="Enter Password" formControlName="password" autocomplete="off"
+    [(ngModel)]="userProfile.userpassword" />
+    <div *ngIf="!password?.valid && password?.dirty " class="text-danger mt-2">
+    
+     
+    
+    <div *ngIf="password.errors?.required">Password is required</div>
+    
+     
+    
+    </div>
+    </div>
+    <br>
+     
+    
+    <div class="col-lg-15 login-btm login-button">
+    <button type="submit" class="btn btn-outline-primary" 
+    (click)="handleLogin()">LOGIN</button>
+    </div>
+    </form>
+    </div>
+    </div>
+    <div class="col-lg-3 col-md-2"></div>
+    </div>
+    </div>
+    </div>

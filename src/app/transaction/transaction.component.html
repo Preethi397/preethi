@@ -3,7 +3,12 @@
     </div>
     <div class="card-body">
         <form>
-
+            <div *ngIf="apiResult.error" class="alert alert-danger mt-3" role="alert">
+                <div class="text-center">Transaction  Failed !!  Please  Check  Your  Details.</div>
+             </div>
+             <div *ngIf="apiResult.success" class="alert alert-success mt-3" role="alert">
+                <div class="text-center"> Transaction  Successfull  !!  Please  check  Your  Activity  Tab.</div>
+             </div>
             <div class="col-md-4 offset-md-4">
 
                 <div class="form-group">
@@ -41,7 +46,7 @@
                     <div class="col">
                         <div class="mb-3">
                             <label for="msgcode" class="form-label"><b>Message Code</b></label><br>
-                            <select id="msgcode" name="msgcode" class="form-select" aria-label="Default select example" aria-setsize="50%">
+                            <select id="msgcode" name="msgcode" class="form-select" aria-label="Default select example" aria-setsize="100%">
                                 <option value="" >Select Message Code</option>
                                 <option *ngFor="let m of messagecode" [value]="m">{{m}}
                                 </option>
@@ -56,6 +61,7 @@
                         <option *ngFor="let c of transfertype" [value]="c.code">{{c.name}}</option>
                     </select>
                 </div><br>
+                
                 <div class="form-group mt-3">
                     <button type="button" (click)="handleRegister()" class="btn btn-primary">Register</button>
                 </div>

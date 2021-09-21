@@ -9,6 +9,8 @@ import { NavitemsComponent } from './navitems/navitems.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
+import { LoginService } from './services/login.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { RouterModule } from '@angular/router';
     HeaderComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
@@ -40,7 +43,7 @@ import { RouterModule } from '@angular/router';
 
     ])],
   
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

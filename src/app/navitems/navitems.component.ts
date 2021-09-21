@@ -7,13 +7,13 @@ import { Component } from '@angular/core';
 })
 export class NavitemsComponent {
   
-  navitems: Array<any>
+  navitems: Array<any>;
   
   constructor() {
     this.navitems = [
     {
       text: "Login",
-      link: "login"
+      link: "login",
     },
     {
       text:"Dashboard",
@@ -24,6 +24,7 @@ export class NavitemsComponent {
       link:"transaction"
 
     }
+  
   ]
   }
 
