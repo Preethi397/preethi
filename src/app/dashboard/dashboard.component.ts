@@ -23,7 +23,7 @@ constructor(private router:Router,private http:HttpClient
 ,private service:LoginService) {
 }
 ngOnInit(): void {
-  let obs= this.http.get('http://localhost:8080/customer/'+this.service.custid)
+  let obs= this.http.get('http://localhost:8080/customer/'+this.service.commoncustomer)
  obs.subscribe((result)=>
  {this.customer=result;
    

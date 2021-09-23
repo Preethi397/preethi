@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from '../services/login.service';
 
@@ -13,11 +14,14 @@ export class TransactionComponent implements OnInit {
   transfertype: Array<any>;
   transferProfile:any;
   message:any;
+  
+ 
   constructor(private http: HttpClient, private router: Router, private service: LoginService) {
     this.messagecode = ["CHQB", "CORT", "HOLD", "INTC", "BHOB", "PHOI", "PHON", "REPA", "SDVA"];
     this.transfertype = [
       { name: "Bank to Bank", code: "B2B" },
       { name: "Customer to Customer", code: "C2C" }]
+      
   }
   ngOnInit(): void {
   }
@@ -25,7 +29,7 @@ export class TransactionComponent implements OnInit {
     success: false,
     error: false
   }
-
+ 
   handleRegister() {
     let url = 'http://localhost:8080/transactions'
     let payLoad = {
