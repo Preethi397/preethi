@@ -22,6 +22,9 @@ customer:any={};
 constructor(private router:Router,private http:HttpClient
 ,private service:LoginService) {
 }
+onSubmit() {  
+  this.router.navigate(['/transaction'])  
+}
 ngOnInit(): void {
   let obs= this.http.get('http://localhost:8080/customer/'+this.service.commoncustomer)
  obs.subscribe((result)=>

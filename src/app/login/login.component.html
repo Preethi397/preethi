@@ -28,7 +28,7 @@
                             <label for="username" class="form-label mt-4">Username</label>
                             <input type="text" class="form-control" id="username" name="username"
                                 placeholder="Enter Username" formControlName="username" autocomplete="off"
-                                [(ngModel)]="userProfile.username" />
+                                [(ngModel)]="userProfile.username" style="width:75%"/>
                             <div *ngIf="!username?.valid && username?.dirty " class="text-danger mt-2">
 
  
@@ -43,7 +43,7 @@
                             <label for="username" class="form-label mt-4">Password</label>
                             <input type="password" class="form-control" id="password" name="password"
                                 placeholder="Enter Password" formControlName="password" autocomplete="off"
-                                [(ngModel)]="userProfile.userpassword" />
+                                [(ngModel)]="userProfile.userpassword" style="width:75%"/>
                             <div *ngIf="!password?.valid && password?.dirty " class="text-danger mt-2">
 
  

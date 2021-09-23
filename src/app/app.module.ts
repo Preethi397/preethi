@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
 import { LoginService } from './services/login.service';
 import { HttpClientModule } from '@angular/common/http';
+import { DropdownComponent } from './dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     DashboardComponent,
     NavitemsComponent,
     TransactionComponent,
-    HeaderComponent
+    HeaderComponent,
+    DropdownComponent
   ],
   imports: [
     HttpClientModule,
